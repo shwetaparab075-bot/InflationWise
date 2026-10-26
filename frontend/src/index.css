@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: Inter, system-ui, sans-serif;
+    background: #F7FAFC;
+    color: #1C2340;
+  }
+  *:focus-visible {
+    outline: 2px solid #16C7D9;
+    outline-offset: 2px;
+  }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #3155C6; border-radius: 999px; }
+
+@layer components {
+  .gradient-brand {
+    background-color: #20205A;
+  }
+  .gradient-soft {
+    background-color: #DDF8FB;
+  }
+  .eyebrow {
+    @apply mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[#16C7D9];
+  }
+  .card {
+    border-radius: 12px;
+    border: 1px solid #E6EEF3;
+    background: #FFFFFF;
+    box-shadow: 0 10px 28px rgba(32, 32, 90, 0.06);
+    transition: 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(32, 32, 90, 0.1);
+  }
+  .input {
+    @apply w-full border border-[#E6EEF3] bg-white px-3 py-2.5 text-sm text-[#1C2340] outline-none transition placeholder:text-[#6B7280] focus:border-[#16C7D9] focus:ring-4 focus:ring-[#16C7D9]/15;
+    border-radius: 10px;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-60;
+    border-radius: 10px;
+    background: #16C7D9;
+    transition: 0.3s ease;
+  }
+  .btn-primary:hover { background: #0EAEBE; }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 border border-[#20205A] bg-white px-5 py-2.5 text-sm font-semibold text-[#20205A];
+    border-radius: 10px;
+    transition: 0.3s ease;
+  }
+  .btn-secondary:hover { background: #DDF8FB; }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 bg-[#20205A] px-5 py-2.5 text-sm font-semibold text-white;
+    border-radius: 10px;
+    transition: 0.3s ease;
+  }
+  .btn-danger:hover { background: #3155C6; }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-[#1C2340];
+  }
+}
+
+.animate-fade { animation: fadeUp 0.35s ease; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
